@@ -1,0 +1,455 @@
+:root {
+  --main-color: #49a6e9;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+body,
+div {
+  padding: 0;
+  margin: 0;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+}
+button,
+input,
+textarea {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* -- Project One -- */
+.pro-1 {
+  height: 100vh;
+  position: relative;
+}
+.pro-1 .p1-loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #eee;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pro-1 .p1-loader img {
+  width: 150px;
+}
+.pro-1 .p1-loader.display-loader {
+  visibility: hidden;
+}
+.pro-1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.577);
+  z-index: 5;
+}
+.pro-1 .p1-head {
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 7;
+}
+.pro-1 .video-cont {
+  z-index: 3;
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.pro-1 .switch {
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+  background-color: white;
+  width: 110px;
+  height: 35px;
+  border-radius: 8px;
+  z-index: 10;
+  cursor: pointer;
+  outline: 2px solid #074571;
+}
+.pro-1 .switch span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  border-radius: 8px;
+  top: 0;
+  font-size: 14 px;
+  color: var(--main-color);
+}
+.pro-1 .switch .play {
+  left: 0;
+}
+.pro-1 .switch .pause {
+  left: 50%;
+}
+.pro-1 .switch .p-switch {
+  left: 0;
+  background-color: var(--main-color);
+  transition: 0.3s;
+}
+.pro-1 .switch .p-switch.move-switch {
+  left: 50%;
+}
+/* -- Project Two -- */
+.pro-2 {
+  min-height: 100vh;
+  background-color: rgb(227, 242, 245);
+  padding: 50px 0;
+}
+.pro-2 .p2-title {
+  text-align: center;
+  width: 80%;
+  margin: 60px auto;
+  color: rgb(47, 47, 47);
+}
+.pro-2 .p2-title h2 {
+  font-size: 40px;
+  margin: 15px 0;
+}
+.pro-2 .p2-title h2 {
+  font-size: 32px;
+}
+.pro-2 .p2-img {
+  width: 80%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px auto 40px;
+}
+.pro-2 .p2-content {
+  width: 80%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px auto;
+}
+.pro-2 .p2-buts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.pro-2 .p2-buts .p2-button {
+  background-color: rgb(171, 206, 213);
+  color: rgb(30, 28, 28);
+  padding: 12px 0;
+  font-size: 17px;
+  cursor: pointer;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+.pro-2 .p2-buts .p2-button:hover {
+  background-color: rgb(120, 120, 120);
+  color: rgb(230, 230, 230);
+}
+.pro-2 .p2-buts .p2-button.active-but {
+  background-color: rgb(244, 244, 244);
+  color: rgb(67, 66, 66);
+}
+.pro-2 .p2-text {
+  background-color: rgb(244, 244, 244);
+  padding: 20px;
+}
+.pro-2 .p2-text .p2-text-con {
+  display: none;
+}
+.pro-2 .p2-text .p2-text-con.active-text {
+  display: block;
+}
+.pro-2 .p2-head {
+  color: rgb(51, 48, 48);
+  padding: 5px 0;
+}
+.pro-2 .p2-par {
+  color: rgb(102, 102, 102);
+  line-height: 2;
+  font-size: 15px;
+}
+@media (min-width: 992px) {
+  .pro-2 .p2-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+  .pro-2 .p2-img,
+  .pro-2 .p2-content {
+    width: 40%;
+    margin: 0;
+  }
+}
+@media (min-width: 1100px) {
+  .pro-2 .p2-img {
+    width: 30%;
+  }
+}
+/* -- Project Three -- */
+.pro-3 {
+  min-height: 100vh;
+  background-color: rgb(230, 230, 230);
+  padding: 30px;
+}
+.pro-3 .p3-img {
+  width: 300px;
+  width: 90%;
+  margin: 20px 0 0 0;
+}
+.pro-3 .p3-content {
+  padding: 30px 0;
+}
+.pro-3 .p3-head {
+  font-size: 22px;
+  color: #074571;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.pro-3 .p3-title {
+  color: #49a6e9;
+  margin: 10px 0;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+.pro-3 .p3-par {
+  color: rgb(79, 79, 79);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.pro-3 .p3-timer {
+  padding: 30px 0;
+  display: flex;
+}
+.pro-3 .p3-timer .p3-date {
+  padding: 10px;
+  color: #ddd;
+  background-color: hsl(209, 61%, 16%);
+  text-align: center;
+  width: 60px;
+  margin-right: 10px;
+}
+.pro-3 .p3-timer .p3-date h4 {
+  font-size: 19px;
+  margin-bottom: 5px;
+}
+.pro-3 .p3-timer .p3-date span {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .pro-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .pro-3 .p3-timer .p3-date {
+    width: 80px;
+    padding: 15px;
+  }
+  .pro-3 .p3-timer .p3-date h4 {
+    font-size: 22px;
+  }
+  .pro-3 .p3-timer .p3-date span {
+    font-size: 14px;
+  }
+}
+/* -- Project Four -- */
+.pro-4 {
+  min-height: 100vh;
+  background-color: rgb(241, 255, 254);
+  padding: 50px 10px;
+  text-align: center;
+}
+.pro-4 .p4-head {
+  color: #074571;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: 1px;
+  margin: 30px 0;
+}
+/* .pro-4 .p4-form {
+
+} */
+.pro-4 .p4-form label {
+  color: #103956;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+.pro-4 .p4-form [type="number"] {
+  padding: 3px;
+  background-color: white;
+  font-size: 16px;
+  width: 60px;
+  margin: 0 10px;
+  border: 2px solid;
+  border-radius: 8px;
+}
+.pro-4 .p4-form [type="submit"] {
+  padding: 5px 12px;
+  background-color: #103956;
+  font-size: 16px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.pro-4 .p4-textarea {
+  margin: 20px;
+  background-color: rgb(212, 246, 249);
+}
+.pro-4 .p4-textarea p {
+  margin: 20px auto;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #103956;
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  .pro-4 .p4-textarea {
+    width: 80%;
+    margin: 20px auto;
+  }
+  .pro-4 .p4-textarea p {
+    margin: 20px 0;
+    font-size: 15px;
+  }
+}
+/* -- Project Five -- */
+.pro-5 {
+  min-height: 100vh;
+  background-color: #ecf5fc;
+  padding: 100px 0;
+}
+.pro-5 .p5-con {
+  width: calc(100% - 30px);
+  max-width: 500px;
+  background-color: #fff;
+  margin: 80px auto;
+  padding: 40px 10px 20px;
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1),
+    -1px -1px 1px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.pro-5 .alert-box {
+  font-size: 15px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.pro-5 .p5-head {
+  text-align: center;
+  color: #103956;
+  font-size: 28px;
+  letter-spacing: 1px;
+  margin: 20px 0 15px;
+}
+.pro-5 .form-5 .input-con {
+  display: flex;
+  margin: 30px 0;
+}
+.pro-5 .form-5 [type="text"] {
+  background-color: #eaf5fd;
+  padding: 4px 4px 4px 8px;
+  font-size: 15px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  flex-grow: 1;
+  border: 2px solid transparent;
+}
+.pro-5 .form-5 [type="text"]:focus {
+  border: 2px solid;
+}
+.pro-5 .form-5 [type="submit"] {
+  background-color: #7abded;
+  padding: 7px 12px;
+  font-size: 14px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  cursor: pointer;
+  font-weight: 300;
+  transition: 0.3s;
+  width: 68px;
+}
+.pro-5 .form-5 [type="submit"]:hover {
+  background-color: #1e80c7;
+  color: white;
+}
+.pro-5 .task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  margin: 20px 0;
+  border-radius: 5px;
+
+}
+.pro-5 .task-item .task-value {
+  font-size: 15px;
+  color: rgb(62, 62, 62);
+}
+.pro-5 .task-item button {
+  font-size: 15px;
+  padding: 4px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+.pro-5 .task-item .task-control button {
+  transition: 0.2s;
+}
+.pro-5 .task-item .edit-task {
+  color: rgb(130, 222, 130);
+}
+.pro-5 .task-item .edit-task:hover {
+  color: rgb(16, 161, 16);
+}
+.pro-5 .task-item .delete-task {
+  color: rgb(255, 193, 240);
+  color: rgb(253, 90, 90);
+}
+.pro-5 .task-item .delete-task:hover {
+  color: rgb(245, 23, 23);
+}
+@media (min-width: 768px) {
+  .pro-5 .p5-con {
+    width: 500px;
+    padding: 40px 30px 20px;
+  }
+}
