@@ -94,7 +94,10 @@ pFourForm.addEventListener("submit", function (e) {
 const pFiveForm = document.querySelector(".form-5");
 const taskText = document.querySelector('[type="text"]');
 const taskSubmit = pFiveForm.querySelector('[type="submit"]');
+const conTasks = document.querySelector(".con-tasks");
 const pFiveCon = document.querySelector(".p5-con");
+const clearItems = document.querySelector(".clear-items");
+// console.log(clearItems)
 const alertBox = document.querySelector(".alert-box");
 let arrTasks = [];
 let editTask = false;
@@ -122,7 +125,7 @@ if (localStorage.getItem("tasks")) {
     butDelete.innerHTML = `<i class="fa-solid fa-trash"> </i>`;
     taskControl.appendChild(butDelete);
     newTaskItem.appendChild(taskControl);
-    pFiveCon.appendChild(newTaskItem);
+    conTasks.appendChild(newTaskItem);
     butDelete.onclick = function () {
       alertBoxShow("Item Deleted", "rgb(255, 193, 240)");
       for(let i = 0;i < arrTasks.length; i++) {
@@ -179,7 +182,7 @@ function playNewTask(e) {
     butDelete.innerHTML = `<i class="fa-solid fa-trash"> </i>`;
     taskControl.appendChild(butDelete);
     newTaskItem.appendChild(taskControl);
-    pFiveCon.appendChild(newTaskItem);
+    conTasks.appendChild(newTaskItem);
     let taskObj = {
       id: taskId,
       value: taskValue,
@@ -191,7 +194,7 @@ function playNewTask(e) {
     // Delete
     butDelete.onclick = function () {
       alertBoxShow("Item Deleted", "rgb(255, 193, 240)");
-      console.log(arrTasks)
+      // console.log(arrTasks)
       for(let i = 0;i < arrTasks.length; i++) {
         if (arrTasks[i].id == newTaskItem.getAttribute('data-id')) {
           arrTasks.splice(i,1)
@@ -204,6 +207,7 @@ function playNewTask(e) {
         taskSubmit.value = "Submit";
         editTask = false;
       }
+      showClearItems ();
     };
     butEdit.onclick = function() {
       editTask = true;
@@ -230,6 +234,8 @@ function playNewTask(e) {
     taskSubmit.value = "Submit";
     editTask = false;
   }
+
+  showClearItems ()
 }
 
 function cheakTaskWriten(checkTask) {
@@ -249,4 +255,25 @@ function alertBoxShow(textAlertBox, alertBoxBg) {
     alertBox.textContent = ``;
     alertBox.style.backgroundColor = `transparent`;
   }, 3000);
+}
+
+
+clearItems.addEventListener("click", () => {
+  document.querySelectorAll(".task-item").forEach(e => {
+    e.remove()
+  })
+  arrTasks = []
+  localStorage.clear()
+  // console.log(arrTasks)
+  // localStorage.setItem("tasks", JSON.stringify(arrTasks));
+})
+
+function showClearItems () {
+  if (document.querySelectorAll(".task-item").length) {
+    // console.log("arrTasks")
+    clearItems.style.display = "block";
+  } else {
+    clearItems.style.display = "none";
+
+  }
 }
